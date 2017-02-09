@@ -44,14 +44,24 @@ fs.readFile(file,(err,data)=>{
 	 });*/
 
 //Hazlo modular
-var filter  = require('./mymodule.js');
+/*var filter  = require('./mymodule.js');
 var dir     = process.argv[2];
 var ext     = process.argv[3];
 
 filter(dir, ext, function(err, filteredList) {
 
     for (var i = 0; i < filteredList.length; i++) {
-        console.log(filteredList[i]);
-    }
+        console.log(filteredList[i])
+;    }
 
+});*/
+
+var http=require('http'),
+	url=process.argv[2];
+
+http.get(url, function (response) {
+   response.setEncoding('utf8')
+  response.on('data', console.log)
+ 
 });
+	
