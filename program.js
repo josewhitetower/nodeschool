@@ -27,8 +27,7 @@ fs.readFile(file,(err,data)=>{
     console.log(num);
 });*/
 
-//LSFiltrado
-
+/*//LSFiltrado
 	var fs= require('fs');
 	var p = require('path');
 	var path= process.argv[2];
@@ -42,4 +41,11 @@ fs.readFile(file,(err,data)=>{
 	 	}
 	 	}
 	 	
-	 });
+	 });*/
+
+//Hazlo modular
+
+var myModule=require('./myModule.js');
+var path= process.argv[2];
+var ext = '.' + process.argv[3];
+
