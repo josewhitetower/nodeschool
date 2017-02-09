@@ -59,7 +59,7 @@ filter(dir, ext, function(err, filteredList) {
 var http=require('http'),
 	url=process.argv[2];
 
-http.get(url, function (response) {
+http.get(url, (response)=> {
    response.setEncoding('utf8')
   response.on('data', console.log)
  
