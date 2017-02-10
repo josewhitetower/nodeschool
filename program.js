@@ -15,7 +15,7 @@ console.log(total);*/
 // var buffer = fs.readFileSync(path).toString();
 // var array= buffer.split('\n');
 // console.log(array.length - 1);
-
+  
 //My First Async I/O
 /*var fs= require('fs');
 var file = process.argv[2];
@@ -54,9 +54,9 @@ filter(dir, ext, function(err, filteredList) {
         console.log(filteredList[i])
 ;    }
 
-});*/
-
-var http=require('http'),
+});
+*/
+/*var http=require('http'),
 	url=process.argv[2];
 
 http.get(url, (response)=> {
@@ -64,4 +64,26 @@ http.get(url, (response)=> {
   response.on('data', console.log)
  
 });
-	
+	*/
+
+//Coleccion HTTP
+
+var http=require('http'),
+	url=process.argv[2];
+var str="";
+http.get(url, (response)=> {
+   response.setEncoding('utf8');
+   response.on('data', (data)=>{
+   	 str+=data;
+   });
+
+   response.on('end', (data)=>{
+   	 var num = str.length;
+   	 console.log(num + "\n" +str);
+
+   });
+
+  
+  
+ 
+});
